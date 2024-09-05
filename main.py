@@ -22,7 +22,7 @@ def lecture_fichier(nomFichier):
     for i in ligne:
         # Utilisation de rstrip pour la suppression d'eventuels espaces en fin de ligne
         i = i.rstrip()
-        # Séparation de la ligne en mots en utilisant les espaces, et ajout à la liste "content"
+        # Séparation de la ligne en mots en utilisant les espaces, et ajout à la liste "contenu"
         contenu.append(i.rsplit(' '))
 
     # Vérification si le fichier est vide
@@ -35,11 +35,11 @@ def lecture_fichier(nomFichier):
     return contenu
 
 
-def calibrage(content):
+def calibrage(contenu):
     """
     Objectif : Calcule un résultat basé sur le traitement des informations extraites des lignes du fichier, et retourne la somme de tous les calibrages extrait du fichier.
 
-    Paramètres : content : Contenu du fichier mémorisé sous la forme d'une liste de liste, où chaque élément est une chaîne de caractères.
+    Paramètres : contenu : Contenu du fichier mémorisé sous la forme d'une liste de liste, où chaque élément est une chaîne de caractères.
 
     """
 
@@ -49,7 +49,7 @@ def calibrage(content):
 
 
     # Traitement de chaque sous-liste
-    for sous_liste in content:
+    for sous_liste in contenu:
         premierNombre = math.inf
         secondNombre = math.inf
 
@@ -91,8 +91,8 @@ def calibrage(content):
 ###########################
 
 # Lecture du contenu du fichier
-content = lecture_fichier("data.txt")
+contenu = lecture_fichier("data.txt")
 
 # Appel de la fonction de calibration et affichage du résultat
-result = calibrage(content)
+result = calibrage(contenu)
 print(result)
